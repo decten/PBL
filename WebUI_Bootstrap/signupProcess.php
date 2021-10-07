@@ -1,5 +1,5 @@
 <?php
-
+    //ip는 aws 접속할 때마다 변경해줘야함.
     $conn = mysqli_connect("15.164.219.223", "pbl", "pbl", "pbl") or die ("connect fail");
 
     $id = $_POST['signup-ID'];
