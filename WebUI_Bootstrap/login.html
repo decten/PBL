@@ -28,7 +28,7 @@
 				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
 					<h2 class="auth-heading text-center mb-5">로그인</h2>
 			        <div class="auth-form-container text-start">
-						<form class="auth-form login-form">         
+						<form method="POST" action="loginCheck.php">         
 							<div class="email mb-3">
 								<label class="sr-only" for="signin-ID">ID</label>
 								<input id="signin-ID" name="signin-ID" type="text" class="form-control signin-email" placeholder="아이디" required="required">
@@ -57,7 +57,7 @@
 							</div>
 						</form>
 						
-						<div class="auth-option text-center pt-5">계정이 없으신가요? <a class="text-link" href="signup.html" style="color: brown;" >회원가입</a>.</div>
+						<div class="auth-option text-center pt-5">계정이 없으신가요? <a class="text-link" href="signup.html" style="color: brown;" >회원가입</a></div>
 					</div><!--//auth-form-container-->	
 
 			    </div><!--//auth-body-->
