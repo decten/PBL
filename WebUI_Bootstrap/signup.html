@@ -15,22 +15,30 @@
     
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/main.css">
+	<style>
+		.centered {position : absolute; left: 50%; top:50%; transform: translate(-50%, -50%); text-align: center;}
+	</style>
+	<style>
+		.designcentered {position: absolute; left:50%; transform: translate(-50%, -50%); text-align: center;}
+	</style>
 
 </head> 
 
-<body class="app app-signup p-0">    	
-    <div class="row g-0 app-auth-wrapper">
+<!--<body class="app app-signup p-0">-->
+	<body class="centered">	
+		<div class="row g-0 app-auth-wrapper" >
+
 	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
 		    <div class="d-flex flex-column align-content-end">
 			    <div class="app-auth-body mx-auto">	
 				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
-					<h2 class="auth-heading text-center mb-4">회원가입</h2>					
-	
+					<h2 class="auth-heading text-center mb-4">회원가입</h2>				
 					<div class="auth-form-container text-start mx-auto">
-						<form class="auth-form auth-signup-form">         
+						<!--<form class="auth-form auth-signup-form">-->
+							<form action="signupProcess.php" method="POST">            
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-ID">아이디</label>
-								<input id="signup-name" name="signup-ID" type="text" class="form-control signup-ID" placeholder="아이디" required="required">
+								<input id="signup-ID" name="signup-ID" type="text" class="form-control signup-ID" placeholder="아이디" required="required">
 							</div>
 							<div class="password mb-3">
 								<label class="sr-only" for="signup-password">Password</label>
@@ -38,15 +46,28 @@
 							</div>
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-name">이름</label>
-								<input id="signup-name" name="signup-name" type="text" class="form-control signup-email" placeholder="이름" required="required">
+								<input id="signup-name" name="signup-name" type="text" class="form-control signup-name" placeholder="이름" required="required">
+							</div>
+							<!--생일, 성별, 회사 추가-->
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-birth">생일</label>
+								<input id="signup-birth" name="signup-birth" type="text" class="form-control signup-birth" placeholder="생일" required="required">
+							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-gender">성별</label>
+								<input id="signup-gender" name="signup-gender" type="text" class="form-control signup-gender" placeholder="성별" required="required">
 							</div>
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-number">전화번호</label> <!--하이픈 생기도록 변경-->
-								<input id="signup-email" name="signup-number" type="text" pattern="[0-9]+" class="form-control signup-number" placeholder="전화번호" required="required">
+								<input id="signup-number" name="signup-number" type="text" pattern="[0-9]+" class="form-control signup-number" placeholder="전화번호" required="required">
 							</div>
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">이메일</label>
 								<input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="이메일" required="required">
+							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-company">회사명</label>
+								<input id="signup-company" name="signup-company" type="text" class="form-control signup-company" placeholder="회사명" required="required">
 							</div>
 							<div class="extra mb-3">
 								<div class="form-check">
@@ -58,7 +79,8 @@
 							</div><!--//extra-->
 							
 							<div class="text-center">
-								<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">계정 생성</button>
+								<!-- onclick="location.href='./signupProcess'"추가-->	
+								<input type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">
 							</div>
 						</form><!--//auth-form-->
 						
@@ -68,27 +90,22 @@
 					
 				    
 			    </div><!--//auth-body-->
-		    
+		    <!--footer 부분 가운데 정렬 고쳐야함-->
+				<!--<footer class="app-auth-footer">-->
 			    <footer class="app-auth-footer">
 				    <div class="container text-center py-3">
 				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			        <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+						 <!--<small class="copyright">Designed with by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>-->
+						 <small class="designcentered">Designed with by Xiaoying Riley</a> for developers</small>
 				    </div>
 			    </footer><!--//app-auth-footer-->	
 		    </div><!--//flex-column-->   
 	    </div><!--//auth-main-col-->
 
-		<!--화면 크기 조정해야 함-->
-	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
-		    <div class="auth-background-holder">			    
-		    </div>
-		    <div class="auth-background-mask"></div>
-		    </div><!--//auth-background-overlay-->
-	    </div><!--//auth-background-col-->
+
     
-    </div><!--//row-->
-
-
+    </div>
+</div><!--//row-->
 </body>
 </html> 
 
