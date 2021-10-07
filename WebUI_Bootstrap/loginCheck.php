@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    //ip는 매번 aws 실행할 때마다 변경해줘야함.
     $conn = mysqli_connect("15.164.219.223", "pbl", "pbl", "pbl") or die ("connect fail");
 
     $signin_id = $_POST['signin-ID'];
