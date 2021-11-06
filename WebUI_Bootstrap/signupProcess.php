@@ -1,6 +1,6 @@
 <?php
     //ip는 aws 접속할 때마다 변경해줘야함.
-    $conn = mysqli_connect("15.164.219.223", "pbl", "pbl", "pbl") or die ("connect fail");
+    $conn = mysqli_connect("3.35.22.78", "pbl", "pbl", "pbl") or die ("connect fail");
 
     $id = $_POST['signup-ID'];
     $password = $_POST['signup-password'];
@@ -10,9 +10,11 @@
     $email = $_POST['signup-email'];
     $number = $_POST['signup-number'];
     $company = $_POST['signup-company'];
+    $identity = $_POST['signup-identity'];
+    
 
 
-    $sql = "insert into signup (id, password, name, birth, gender, email, phone, company) values ('$id', '$password', '$name', '$birth', '$gender', '$email', '$number', '$company')";
+    $sql = "insert into signup (id, password, name, birth, gender, email, phone, company, identity) values ('$id', '$password', '$name', '$birth', '$gender', '$email', '$number', '$company','$identity')";
 
     $result = $conn->query($sql);
 

@@ -1,0 +1,6 @@
+.menu{
+    fill: blue;
+}
+.menu:hover{
+    fill: green;
+}

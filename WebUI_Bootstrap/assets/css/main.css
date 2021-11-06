@@ -150,6 +150,8 @@ p {
     margin-bottom: 1rem
 }
 
+
+
 abbr[title],
 abbr[data-bs-original-title] {
     -webkit-text-decoration: underline dotted;
@@ -212,7 +214,23 @@ mark,
     padding: .2em;
     background-color: #fcf8e3
 }
-
+scale,
+.scale{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.scale:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+  }
+  
 sub,
 sup {
     position: relative;
@@ -2738,6 +2756,8 @@ textarea.form-control-lg {
     margin-right: 1rem
 }
 
+
+
 .btn-check {
     position: absolute;
     clip: rect(0, 0, 0, 0);
@@ -3869,6 +3889,11 @@ fieldset:disabled .btn {
 
 .fade:not(.show) {
     opacity: 0
+}
+
+.full{
+    width: 90vw;
+    overflow: hidden;margin: 0px auto; position: relative; 
 }
 
 .collapse:not(.show) {
@@ -12963,7 +12988,7 @@ button.close:focus {
 
 .app-card .app-icon-holder {
     display: inline-block;
-    background: rgb(214, 218, 221);
+    background: rgb(124, 124, 124);
     color: #d26d69;
     width: 50px;
     height: 50px;
@@ -13001,7 +13026,7 @@ button.close:focus {
 }
 
 .app-card .app-card-body .app-card-actions:hover {
-    background: #f5f6fe
+    background: #424242
 }
 
 .app-card .app-card-body .app-card-actions .dropdown-menu {
@@ -13418,7 +13443,10 @@ button.close:focus {
 }
 
 .app-auth-wrapper .app-auth-body {
-    width: 360px
+    width: 400px;
+    background-color: linen; 
+    border-radius:1em;
+    box-shadow: 10px 10px 10px 1px lightgray;
 }
 
 .app-auth-wrapper .app-logo .logo-icon {

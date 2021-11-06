@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
+	<script src="../bower_components/web3/dist/web3.min.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/truffle-contract/dist/truffle-contract.js"></script>		
+	<script src="./documentTransfer.js"></script>
+
     <title>회원가입</title>
     
     <!-- Meta -->
@@ -30,8 +35,8 @@
 
 	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
 		    <div class="d-flex flex-column align-content-end">
-			    <div class="app-auth-body mx-auto">	
-				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
+			    <div class="app-auth-body px-4 py-5 mx-auto">	
+				    <div class="app-auth-branding mb-4"><a class="app-logo" href="login.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
 					<h2 class="auth-heading text-center mb-4">회원가입</h2>				
 					<div class="auth-form-container text-start mx-auto">
 						<!--<form class="auth-form auth-signup-form">-->
@@ -69,6 +74,10 @@
 								<label class="sr-only" for="signup-company">회사명</label>
 								<input id="signup-company" name="signup-company" type="text" class="form-control signup-company" placeholder="회사명" required="required">
 							</div>
+							<div class="email mb-3">
+								<label class="sr-only" for="signup-identity">확인</label>
+								<input id="signup-identity" name="signup-identity" type="text" class="form-control signup-identity" placeholder="수출자 : 1, 수입자 : 2" required="required">
+							</div>
 							<div class="extra mb-3">
 								<div class="form-check">
 									<input class="form-check-input" type="checkbox" value="" id="RememberPassword">
@@ -82,30 +91,20 @@
 								<!-- onclick="location.href='./signupProcess'"추가-->	
 								<input type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">
 							</div>
+							<div class="button">
+								<button type="button" onclick="_registerShipper()">제출_컨트랙트용</button>
+							</div>
+							<div class="status">
+								<b id='shipperRegistrationMessage'></b>
+							</div>
 						</form><!--//auth-form-->
 						
 						<div class="auth-option text-center pt-5">이미 계정이 있으신가요? <a class="text-link" href="login.html" style="color: brown;">로그인</a></div>
 					</div><!--//auth-form-container-->	
-					
-					
-				    
 			    </div><!--//auth-body-->
-		    <!--footer 부분 가운데 정렬 고쳐야함-->
-				<!--<footer class="app-auth-footer">-->
-			    <footer class="app-auth-footer">
-				    <div class="container text-center py-3">
-				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-						 <!--<small class="copyright">Designed with by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>-->
-						 <small class="designcentered">Designed with by Xiaoying Riley</a> for developers</small>
-				    </div>
-			    </footer><!--//app-auth-footer-->	
 		    </div><!--//flex-column-->   
 	    </div><!--//auth-main-col-->
-
-
-    
-    </div>
-</div><!--//row-->
+    </div><!--//centered-->
 </body>
 </html> 
 

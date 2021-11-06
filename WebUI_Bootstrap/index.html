@@ -1,7 +1,3 @@
-<!--메뉴가 기본이 빨간색이고, hover 하면 색깔이 초록색으로 변함. 회색(안 올림) & 빨간색(올림)
-	변경 가능하실까요?
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +18,13 @@
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/main.css">
 
+	<!-- Font -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+		*{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+	</style>
 </head>
 
 <body class="app">
@@ -33,11 +36,13 @@
 
 						<div class="col-auto">
 							<a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+								<!--이 부분 수정-->
 								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
 									role="img">
 									<title>메뉴</title>
 									<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
 										stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+									
 								</svg>
 							</a>
 						</div>
@@ -235,7 +240,7 @@
 											d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
 									</svg>
 								</span>
-								<span class="nav-link-text">홈 페이지</span>
+								<span class="nav-link-text">섬김이란?</span>
 							</a>
 							<!--//nav-link-->
 						</li>
@@ -252,28 +257,7 @@
   										<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
 									</svg>
 								</span>
-								<span class="nav-link-text">서류 업로드</span>
-							</a>
-							<!--//nav-link-->
-						<!--//nav-item-->
-
-						<li class="nav-item">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="doclist.html">
-								<span class="nav-icon">
-									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
-										fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd"
-											d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-										<path fill-rule="evenodd"
-											d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z" />
-										<circle cx="3.5" cy="5.5" r=".5" />
-										<circle cx="3.5" cy="8" r=".5" />
-										<circle cx="3.5" cy="10.5" r=".5" />
-									</svg>
-
-								</span>
-								<span class="nav-link-text">서류 목록</span>
+								<span class="nav-link-text">키 공유</span>
 							</a>
 							<!--//nav-link-->
 						</li>
@@ -291,11 +275,42 @@
 											d="M13.81 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zM2.19 3A2 2 0 0 0 .198 5.181l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H2.19z" />
 									</svg>
 								</span>
-								<span class="nav-link-text">인증 서류</span>
+								<span class="nav-link-text">서류 보관함</span>
 							</a>
 							<!--//nav-link-->
 						</li>
 						<!--//nav-item-->
+
+						<li class="nav-item">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link" href="QR.html">
+								<span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+									  </svg>
+								</span>
+								<span class="nav-link-text">QR 인증</span>
+							</a>
+							<!--//nav-link-->
+						</li>
+						<!--//nav-item-->
+
+						<li class="nav-item">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link" href="settings.html">
+								<span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+										<path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+										<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+									  </svg>
+								</span>
+								<span class="nav-link-text">서류 검증</span>
+							</a>
+							<!--//nav-link-->
+						</li>
+						<!--//nav-item-->
+
 					</ul>
 					<!--//app-menu-->
 				</nav>
@@ -333,34 +348,13 @@
 								<!--//nav-link-->
 								<div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
 									<ul class="submenu-list list-unstyled">
-										<li class="submenu-item"><a class="submenu-link" href="login.html">Login</a></li>
-										<li class="submenu-item"><a class="submenu-link" href="signup.html">Signup</a></li>
-										<li class="submenu-item"><a class="submenu-link" href="reset-password.html">Reset
-												password</a></li>
-										<li class="submenu-item"><a class="submenu-link" href="404.html">404 page</a></li>
+										<li class="submenu-item"><a class="submenu-link" href="login.html">로그인</a></li>
+										<li class="submenu-item"><a class="submenu-link" href="signup.html">회원가입</a></li>
 									</ul>
 								</div>
 							</li>
 							<!--//nav-item-->
-
-							<li class="nav-item">
-								<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-								<a class="nav-link" href="help.html">
-									<span class="nav-icon">
-										<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle"
-											fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd"
-												d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-											<path
-												d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-										</svg>
-									</span>
-									<span class="nav-link-text">문의하기</span>
-								</a>
-								<!--//nav-link-->
-							</li>
-							<!--//nav-item-->
-
+							 
 						</ul>
 						<!--//footer-menu-->
 					</nav>
@@ -373,149 +367,127 @@
 		<!--//app-sidepanel-->
 	</header>
 	<!--//app-header-->
-
+	<!--여기서부터 사이드바, main화면-->
 	<div class="app-wrapper">
-
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
-
 				<h1 class="app-page-title">홈 페이지</h1>
-
 				<div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
 					<div class="inner">
-						<div class="app-card-body p-3 p-lg-4">
-							<h3 class="mb-3"><h3>뭘 넣어야 할 지</h3>
-							<div class="row gx-5 gy-3">
-								<div class="col-12 col-lg-9">
-
-									<div>모르겠음</div>
-								</div>
-								<!--//col-->
-								<div class="col-12 col-lg-3">
-									<a class="btn app-btn-primary"
-										href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"><svg
-											width="1em" height="1em" viewBox="0 0 16 16"
-											class="bi bi-file-earmark-arrow-down me-2" fill="currentColor"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
-											<path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z" />
-											<path fill-rule="evenodd"
-												d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z" />
-										</svg>그냥 넣음</a>
-								</div>
-								<!--//col-->
+					<div class="app-card-body p-3 p-lg-4">
+						<h3 class="mb-3"><h3>섬김이란?</h3>
+						<div class="row gx-5 gy-3">
+							<div class="col-12 col-lg-9">
+								<div>물류 과정이 너무 복잡하고 어렵다면? 손쉽고 빠르게 선적서류를 등록 및 확인해보세요!<br>원본인지, 훼손된 파일인지 걱정되나요? 몇초내에 파일의 위변조 여부 및 원본 여부를 알 수 있어요!</div>
 							</div>
-							<!--//row-->
-							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							<!--//col-->
+							<div class="col-12 col-lg-3">
+								<a class="btn app-btn-primary"
+									href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"><svg
+										width="1em" height="1em" viewBox="0 0 16 16"
+										class="bi bi-file-earmark-arrow-down me-2" fill="currentColor"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
+										<path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z" />
+										<path fill-rule="evenodd"
+											d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z" />
+									</svg>부연 설명</a>
+							</div>
+							<!--//col-->
 						</div>
-						<!--//app-card-body-->
-
+						<!--//row-->
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
-					<!--//inner-->
+				<!--//app-card-body-->
 				</div>
-				<!--//app-card-->
+				</div>
+				</div>
+				<!--//inner-->
 
-				<!--중간 광고-->
-				<div class="px-4 pt-5 my-5 text-center border-bottom" style="background-color: white;">
-					<h1 class="display-4 fw-bold">섬김이</h1>
-					<div class="col-lg-6 mx-auto">
-					  <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+				<div class="full px-4 py-5 my-5 text-center border-bottom" style="position:relative;" >
+					<video class="background__video inject-video-sources" poster="" id="bgvid" playsinline="" autoplay="" muted="" loop="" data-webm-src="https://cargox.io/static/videos/envelope.webm" data-mp4-src="https://cargox.io/static/videos/envelope.mp4">
+						<source src="https://cargox.io/static/videos/envelope.webm" type="video/webm"><source src="https://cargox.io/static/videos/envelope.mp4" type="video/mp4"></video>
+					<h1 class="display-4 fw-bold" style="margin-top: -700px; position:relative; z-index: 1;">섬김이</h1>
+					<div class="col-lg-6 mx-auto" style="position:relative; z-index: 1;">
+					  <p class="lead mb-4">블록체인 기반의 선적 서류 관리 플랫폼입니다.  무역거래가 처음이신가요? 손쉽고 빠르게 선적서류를 등록할 수 있고, 나의 거래자가 실시간으로 파일을 열람 할 수 있습니다. 소유한 서류의 원본 여부도 몇초내에 확인할 수 있습니다. 가장 간편하고 빠른 물류 업무 도우미, 섬김이를 만나보세요! </p>
 					  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-						<button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary button</button>
-						<button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+						<button type="button" class="btn btn-primary btn-lg px-4 me-sm-3 mb-5">Primary button</button>
+						<button type="button" class="btn btn-outline-secondary btn-lg px-4 mb-5">Secondary</button>
 					  </div>
 					</div>
-					<div class="overflow-hidden" style="max-height: 50vh;">
-					  <div class="container px-5">
-						<img src=".\assets\images\tmp.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
-					  </div>
+					<div class="row row-cols-1 row-cols-md-3 mb-5 text-center" style="position:relative; z-index:2; margin-top:500px;">
+						<div class="col">
+							<div class="card-body bg-secondary text-white" >
+							  <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+							  <ul class="list-unstyled mt-3 mb-4">
+								<li>10 users included</li>
+								<li>2 GB of storage</li>
+								<li>Email support</li>
+								<li>Help center access</li>
+							  </ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card-body bg-secondary text-white" >
+							  <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+							  <ul class="list-unstyled mt-3 mb-4">
+								<li>10 users included</li>
+								<li>2 GB of storage</li>
+								<li>Email support</li>
+								<li>Help center access</li>
+							  </ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card-body bg-secondary text-white" >
+							  <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+							  <ul class="list-unstyled mt-3 mb-4">
+								<li>10 users included</li>
+								<li>2 GB of storage</li>
+								<li>Email support</li>
+								<li>Help center access</li>
+							  </ul>
+							</div>
+						</div>
+					</div>	
+				</div>
+				<!--중간 광고-->
+				<div class="container-xl">
+				<div class="row">
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png" style="display:block; text-align: center;">Secondary
+					</div>
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png">Secondary
+					</div>
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png">Secondary
 					</div>
 				</div>
-
-				<!--가격 광고-->
-				<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-					<div class="col">
-					  <div class="card mb-4 rounded-3 shadow-sm">
-						<div class="card-header py-3">
-						  <h4 class="my-0 fw-normal">Free</h4>
-						</div>
-						<div class="card-body">
-						  <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-						  <ul class="list-unstyled mt-3 mb-4">
-							<li>10 users included</li>
-							<li>2 GB of storage</li>
-							<li>Email support</li>
-							<li>Help center access</li>
-						  </ul>
-						  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-						</div>
-					  </div>
+				<div class="row">
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png" style="display:block; text-align: center;">Secondary
 					</div>
-					<div class="col">
-					  <div class="card mb-4 rounded-3 shadow-sm">
-						<div class="card-header py-3">
-						  <h4 class="my-0 fw-normal">Pro</h4>
-						</div>
-						<div class="card-body">
-						  <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-						  <ul class="list-unstyled mt-3 mb-4">
-							<li>20 users included</li>
-							<li>10 GB of storage</li>
-							<li>Priority email support</li>
-							<li>Help center access</li>
-						  </ul>
-						  <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-						</div>
-					  </div>
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png">Secondary
 					</div>
-					<div class="col">
-					  <div class="card mb-4 rounded-3 shadow-sm border-primary">
-						<div class="card-header py-3 text-white bg-primary border-primary">
-						  <h4 class="my-0 fw-normal">Enterprise</h4>
-						</div>
-						<div class="card-body">
-						  <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-						  <ul class="list-unstyled mt-3 mb-4">
-							<li>30 users included</li>
-							<li>15 GB of storage</li>
-							<li>Phone and email support</li>
-							<li>Help center access</li>
-						  </ul>
-						  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-						</div>
-					  </div>
+					<div class="col-md-4 scale">
+						<img alt="Bootstrap Image Preview" src=".\assets\images\blockchain.png">Secondary
 					</div>
 				</div>
-				<!--//row-->
-
+				<!--사진-->
+				</div>
 			</div>
 			<!--//container-fluid-->
 		</div>
 		<!--//app-content-->
-
-		<footer class="app-footer">
-			<div class="container text-center py-3">
-				<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-				<small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a
-						class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for
-					developers</small>
-
-			</div>
-		</footer>
-		<!--//app-footer-->
-
 	</div>
 	<!--//app-wrapper-->
-
 
 	<!-- Javascript -->
 	<script src="assets/plugins/popper.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Charts JS -->
-	<script src="assets/plugins/chart.js/chart.min.js"></script>
-	<script src="assets/js/index-charts.js"></script>
 
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>

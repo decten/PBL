@@ -14,17 +14,19 @@
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
-    
+    <style>
+		.centered {position : absolute; left: 50%; top:50%; transform: translate(-50%, -50%); text-align: center;}
+	</style>
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/main.css">
 
 </head> 
-
-<body class="app app-login p-0">    	
-    <div class="row g-0 app-auth-wrapper">
-	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
-		    <div class="d-flex flex-column align-content-end">
-			    <div class="app-auth-body mx-auto">	
+<body class="centered">	
+<body class="app app-login p-0" >    	
+    <div class="row g-0 app-auth-wrapper" >
+	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5" >
+		    <div class="d-flex flex-column align-content-end" >
+			    <div class="app-auth-body  px-4 py-5 mx-auto">	
 				    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
 					<h2 class="auth-heading text-center mb-5">로그인</h2>
 			        <div class="auth-form-container text-start">
@@ -61,27 +63,9 @@
 					</div><!--//auth-form-container-->	
 
 			    </div><!--//auth-body-->
-		    
-			    <footer class="app-auth-footer">
-				    <div class="container text-center py-3">
-				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			        <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-				       
-				    </div>
-			    </footer><!--//app-auth-footer-->	
-		    </div><!--//flex-column-->   
-	    </div><!--//auth-main-col-->
+    	</div><!--//row-->
 
-		<!--크기 조정해야 함-->
-	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
-		    <div class="auth-background-holder">
-		    </div>
-		    <div class="auth-background-mask"></div>
-	    </div><!--//auth-background-col-->
-    
-    </div><!--//row-->
-
-
+</div><!--//centered-->
 </body>
 </html> 
 
