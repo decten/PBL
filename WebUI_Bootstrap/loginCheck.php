@@ -2,7 +2,7 @@
     session_start();
 
     //ip는 매번 aws 실행할 때마다 변경해줘야함.
-    $conn = mysqli_connect("3.35.22.78", "pbl", "pbl", "pbl") or die ("connect fail");
+    $conn = mysqli_connect("3.37.2.3", "pbl", "pbl", "pbl") or die ("connect fail");
 
     $signin_id = $_POST['signin-ID'];
     $signin_password = $_POST['signin-password'];
@@ -14,7 +14,7 @@
         $row = mysqli_fetch_assoc($result);
         if($row['password'] == $signin_password){
              if($row['identity']== "1"){
-                echo "<script>window.location.replace('index_1.html');</script>";
+                echo "<script>window.location.replace('index.html');</script>";
              }else{
                 echo "<script>window.location.replace('index.html');</script>";
             }

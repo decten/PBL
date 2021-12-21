@@ -1,6 +1,11 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 .App {
   text-align: center;
- 
+  background: #f5f6fe ;
+  height: 100vh;
 }
 
 .App-logo {
@@ -9,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: brown;
   height: 150px;
   padding: 20px;
   color: white;
@@ -22,20 +27,40 @@
 .App-intro {
   font-size: large;
 }
+
 /*some css I added*/
+.submit-form{
+  text-align: center;
+  background: rgb(233, 233, 233) ;
+  border-radius : 7px;
+  width: 60vw; 
+  height: 8vh;
+  padding-top: 2%;
+  margin: auto auto 20px auto;
+}
+
 input[type="file"] {
     display: inline-block;
 }
 
+.custom-btn{
+  color: #000;
+  background-color: brown !important;
+  border-color: brown
+}
+
 .table {
       max-width: 90%;
-      margin: 10px;
+      margin : 15px auto auto auto;
 }
 .table th {
     text-align: center;
 }
+
 /*end of my css*/
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');

@@ -3,9 +3,10 @@
 
 <head>
 	<script src="../bower_components/web3/dist/web3.min.js"></script>
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../bower_components/truffle-contract/dist/truffle-contract.js"></script>		
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>	
+	<script src="./node_modules/@truffle/contract/dist/truffle-contract.min.js"></script>
 	<script src="./documentTransfer.js"></script>
+	
 
 	<title>섬김이</title>
 
@@ -225,7 +226,7 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg"
+					<a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.png"
 							alt="logo"><span class="logo-text">섬김이</span></a>
 
 				</div>
@@ -288,14 +289,14 @@
 
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="QR.html">
+							<a class="nav-link" href="qr.html">
 								<span class="nav-icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
 										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
 										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
 									  </svg>
 								</span>
-								<span class="nav-link-text">QR 인증</span>
+								<span class="nav-link-text">QR 검증</span>
 							</a>
 							<!--//nav-link-->
 						</li>
@@ -303,14 +304,14 @@
 
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link active" href="mydoc.html">
+							<a class="nav-link active" href="settings.html">
 								<span class="nav-icon">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
 										<path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
 										<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
 									  </svg>
 								</span>
-								<span class="nav-link-text">서류 검증</span>
+								<span class="nav-link-text">서류 공유</span>
 							</a>
 							<!--//nav-link-->
 						</li>
@@ -384,12 +385,12 @@
 				}
 			</script> -->
 		    <div class="container-xl">		    
-			    <h1 class="app-page-title">서류 검증</h1>
+			    <h1 class="app-page-title">서류 등록</h1>
 			    <hr class="mb-4">
                 <div class="row g-4 settings-section">
 	                <div class="col-12 col-md-4">
-		                <h3 class="section-title" id = section-title>신뢰성 확인 절차</h3>
-		                <div class="section-intro" id = setcion-intro>이 과정을 통해 실제 검증된 기관에서 발행된 것과 동일하다는 확인을 할 수 있습니다. </div>
+		                <h3 class="section-title" id = section-title>서류 등록</h3>
+		                <div class="section-intro" id = setcion-intro>이 과정을 통해 입력한 서류는 블록체인에 등록되어 무결성을 보장받음과 동시에 거래자와 공유할 수 있습니다.</div>
 	                </div>
 	                <div class="col-12 col-md-8">
 		                <div class="app-card app-card-settings shadow-sm p-4">
@@ -403,23 +404,27 @@
   <circle cx="8" cy="4.5" r="1"/>
 </svg></span></label><br>
 									    <!-- <input type="text" class="form-control" id="setting-input1" placeholder="파일 업로드 칸" required> -->
-										<input type="file" class="btn-sm app-btn-secondary" id="inputfile2" required>
+										<input type="file" class="btn-sm app-btn-secondary" id="inputfile" onchange="changeText()" required>
 									</div>
+									<!-- file 원본을 자바스크립트 함수 IPFS()로 넘긴다음, 받은 해시값을 인자로 컨트랙트 함수 registerDoc()호출. -->>
+									
 									<div class="mb-3">
-									    <label for="setting-input-2" class="form-label">파일의 키 값</label>
-									    <input type="text" class="form-control" id="setting-input2" placeholder="키 값을 입력하세요." required>
+									    <label for="setting-input-2" class="form-label">거래자 주소</label>
+									    <input type="text" class="form-control" id="setting-input2" placeholder="문자열 입력 칸" required>
 									</div>
 								    <div class="mb-3">
-									    <label for="setting-input-3" class="form-label">해당 파일에 대한 검증을 수행하시겠습니까?</label>
+									    <label for="setting-input-3" class="form-label">해당 파일을 블록체인에 등록하시겠습니까?</label>
 									    <!-- <input type="text" class="form-control" id="setting-input3" placeholder="해당 파일에 대한 검증을 수행하시겠습니까?"> -->
 									</div>
 											<!--수정한 부분-->
-									<button type="button" class="btn app-btn-primary" id = "openBtn" onclick="_checkIPFS()">검증 수행</button>
+									<button type="button" class="btn app-btn-primary" id = "openBtn" onclick="_registerIPFS()">등록하기</button>
 									<!-- <script>
 										function changeText(){
-											document.getElementById("setting-input1").value = '1) 파일의 hash 값 : [103989s8x0439hsx]';
-											document.getElementById("setting-input2").value = '2) 블록체인 컨트랙트 주소 :[591561ad651x6c8v9]';
-											document.getElementById("setting-input3").value = '검증 완료';
+											var fileValue = $("#inputfile").val().split("\\");
+											var fileName = fileValue[fileValue.length-1];
+
+											document.getElementById("setting-input2").value = "안녕";
+
 										}
 									</script> -->
 							    </form>
@@ -428,15 +433,15 @@
 						</div><!--//app-card-->
 	                </div>
                 </div><!--//row-->
-                <div class="status1">
-					<b id='DocCompareMessage'><h3></h3></b>
+                <div class="status">
+					<b id='DocRegistrationMessage'></b>
 				</div>
                 <div class="container-xl" id = "showtext" style="display:none">		    
 					<hr class="mb-4">
 					<div class="row g-4 settings-section">
 						<div class="col-12 col-md-4">
-							<h3 class="section-title" id = section-title>신뢰성 결과</h3>
-							<div class="section-intro" id = setcion-intro>해당 파일은 신뢰할 수 있는 파일입니다.</div>
+							<h3 class="section-title" id = section-title>등록 결과</h3>
+							<div class="section-intro" id = setcion-intro>등록이 완료 되었습니다.</div>
 						</div>
 						<div class="col-12 col-md-8">
 							<div class="app-card app-card-settings shadow-sm p-4">
@@ -444,18 +449,19 @@
 								<div class="app-card-body">
 									<form class="settings-form">
 										<div class="mb-3">
-											<label for="setting-input-1" class="form-label">파일의 hash 값<span class="ms-2" data-container="body" data-bs-toggle="popover" data-trigger="hover" data-placement="top" data-content="This is a Bootstrap popover example. You can use popover to provide extra info."><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+											<label for="setting-input-1" class="form-label">파일 이름<span class="ms-2" data-container="body" data-bs-toggle="popover" data-trigger="hover" data-placement="top" data-content="This is a Bootstrap popover example. You can use popover to provide extra info."><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 	  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 	  <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
 	  <circle cx="8" cy="4.5" r="1"/>
 	</svg></span></label>
-											<input type="text" class="form-control" id="setting-input1" value="0x157d7e5dd205abedbe8e20a33e91fc80158fac99d4a3fdd7980eec6a0ec94a27" required>
+										<input type="text" class="form-control" id="setting-input1" value="공유파일 예제.pdf" required>	
+											
 										</div>
 										<div class="mb-3">
-											<label for="setting-input-2" class="form-label">블록체인 컨트랙트 주소</label>
-											<input type="text" class="form-control" id="setting-input2" value="0x8c04669cbaff30a31308ac20c2d9121055fc791a168e402f26ccb561d8701577 " required>
+											<label for="setting-input-2" class="form-label">거래자 주소</label>
+											<input type="text" class="form-control" id="setting-input2" value = "0xC5cD1e8F2f6f34c8e76A9c711B12d7127de5417d" required>
 										</div>
-										<button type="button" class="btn app-btn-primary" id = "openBtn" onclick="document.all['showtext'].style.display='none'">다시 수행</button>
+										<button type="button" class="btn app-btn-primary" id = "openBtn" onclick="document.all['showtext'].style.display='none'">다른 파일 등록</button>
 									</form>
 								</div><!--//app-card-body-->
 								

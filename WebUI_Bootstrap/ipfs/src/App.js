@@ -1,6 +1,5 @@
 import {Table, Grid, Button, Form } from 'react-bootstrap';
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import web3 from './web3';
 import ipfs from './ipfs';
@@ -96,62 +95,49 @@ class App extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <h1> Ethereum and InterPlanetary File System(IPFS) with Create React App</h1>
+            <h1> 선하 증권 업로드</h1>
           </header>
           
           <hr />
 
         <Grid>
-          <h3> Choose file to send to IPFS </h3>
-          <Form onSubmit={this.onSubmit}>
-            <input 
-              type = "file"
-              onChange = {this.captureFile}
-            />
-             <Button 
-             bsStyle="primary" 
-             type="submit"> 
-             Send it 
-             </Button>
+          <Form className="submit-form" onSubmit={this.onSubmit}>
+            <input type = "file" onChange = {this.captureFile}/>
+            <Button variant = "danger" type="submit"> 제출 </Button>
           </Form>
 
-          <hr/>
-            <Button onClick = {this.onClick}> Get Transaction Receipt </Button>
+            <Button onClick = {this.onClick}> 결과 확인 </Button>
 
-              <Table bordered responsive>
+            <Table bordered responsive variant="dark">
                 <thead>
                   <tr>
-                    <th>Tx Receipt Category</th>
-                    <th>Values</th>
+                    <th>항목</th>
+                    <th>값</th>
                   </tr>
                 </thead>
                
                 <tbody>
                   <tr>
-                    <td>IPFS Hash # stored on Eth Contract</td>
-                    <td>{this.state.ipfsHash}</td>
-                  </tr>
-                  <tr>
-                    <td>Ethereum Contract Address</td>
+                    <td>이더리움 컨트랙트 주소</td>
                     <td>{this.state.ethAddress}</td>
                   </tr>
 
                   <tr>
-                    <td>Tx Hash # </td>
+                    <td>문서 해시 코드 </td>
                     <td>{this.state.transactionHash}</td>
                   </tr>
 
                   <tr>
-                    <td>Block Number # </td>
+                    <td>블록 순서</td>
                     <td>{this.state.blockNumber}</td>
                   </tr>
 
                   <tr>
-                    <td>Gas Used</td>
+                    <td>사용한 가스</td>
                     <td>{this.state.gasUsed}</td>
                   </tr>                
                 </tbody>
-            </Table>
+              </Table>
         </Grid>
      </div>
       );

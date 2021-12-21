@@ -1,3 +1,7 @@
+import { default as Web3 } from 'web3';
+import { default as contract } from 'truffle-contract';
+https://lab.hanium.or.kr/21_HP058/21_hp058.git
+
 var DocumentTransfer;
 var HashValue;
 var contractAddress = "0xB3d5d6313061eA4cb5b52Db2F65932D1d90d7Ac2";
@@ -8,7 +12,7 @@ window.onload = function() {
     $.getJSON("../contract/DocumentTransfer.json", function(json) { // 컨트랙트 ABI 불러오기 
         var contract = require("@truffle/contract");
         DocumentTransfer = contract( json );
-        DocumentTransfer.setProvider(new Web3.providers.HttpProvider("http://localhost:8545")); 
+        DocumentTransfer.setProvider(new Web3.providers.HttpProvider("http://localhost:7545")); 
       //로컬 이더리움 cli(=가나슈)와 연동을 위한 웹(web3) 설정 
     });
 }
